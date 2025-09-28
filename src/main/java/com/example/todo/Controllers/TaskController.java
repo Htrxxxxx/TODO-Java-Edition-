@@ -4,6 +4,7 @@ import com.example.todo.Model.Task;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -35,6 +36,23 @@ public class TaskController {
     public String save(@ModelAttribute Task task, RedirectAttributes ra) {
         service.addTask(task);
         ra.addFlashAttribute("success", "Task saved");
+        return "redirect:/tasks";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable Long id, RedirectAttributes ra) {
+        service.deleteTask(id);
+        ra.addFlashAttribute("success", "Task deleted");
+        return "redirect:/tasks";
+    }
+
+    @GetMapping("/toggle/{id}")
+    public String toggle(@PathVariable Long id, RedirectAttributes ra) {
+        service.findById(id).ifPresent(t -> {
+        if(t.getIsDone() == true) t.setIsDone(false);
+        else t.setIsDone(true);
+        service.addTask(t);
+        });
         return "redirect:/tasks";
     }
     

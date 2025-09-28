@@ -1,6 +1,9 @@
 package com.example.todo.Model;
 
 import org.springframework.stereotype.Service;
+
+import com.google.common.base.Optional;
+
 import java.util.List;
 
 @Service
@@ -19,4 +22,7 @@ public class TaskService {
         repo.deleteById(id);
     }
     public List<Task> findAll() { return repo.findAll(); }
+    public Optional<Task> findById(Long id) {
+        return repo.findById(id);
+    }
 }

@@ -18,6 +18,7 @@ A simple app with Thymeleaf views , it's a basic CRUD project using a simple Tas
 
 ### Project Structure :
 ```html
+<pre>
 todo/
 ├─ .mvn/
 ├─ .vscode/
@@ -52,7 +53,7 @@ todo/
 ├─ mvnw
 ├─ mvnw.cmd
 └─ pom.xml
-html```
+</pre>
 
 ### Project Dependancy : 
 - JDK 17+

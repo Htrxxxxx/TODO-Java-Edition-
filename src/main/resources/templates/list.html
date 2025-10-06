@@ -1,0 +1,41 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title>Tasks</title>
+</head>
+<body>
+  <h1>Tasks</h1>
+
+  <div th:if="${success}">
+    <p th:text="${success}"></p>
+  </div>
+
+  <p><a th:href="@{/tasks/new}">Create new task</a></p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Done</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="t : ${tasks}">
+        <td th:text="${t.id}">1</td>
+        <td th:text="${t.name}">Sample name</td>
+        <td th:text="${t.description}">Sample description</td>
+        <td th:text="${t.isDone}">false</td>
+        <td>
+          <a th:href="@{/tasks/toggle/{id}(id=${t.id})}">Toggle</a> |
+          <a th:href="@{/tasks/delete/{id}(id=${t.id})}"
+             onclick="return confirm('Delete this task?')">Delete</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

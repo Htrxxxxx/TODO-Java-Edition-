@@ -1,0 +1,39 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8"/>
+  <title>Create / Edit Task</title>
+</head>
+<body>
+  <h1 th:text="${task.id == null} ? 'Create Task' : 'Edit Task'">Create Task</h1>
+
+  <form th:action="@{/tasks}" th:object="${task}" method="post">
+  <input type="hidden" th:field="*{id}" />
+
+  <div>
+    <label for="name">Name</label>
+    <input id="name" type="text" th:field="*{name}" required />
+  </div>
+
+  <div>
+    <label for="description">Description</label>
+    <textarea id="description" th:field="*{description}"></textarea>
+  </div>
+
+  <div>
+    <label for="isDone">Done</label>
+    <input id="isDone" type="checkbox" th:field="*{isDone}" />
+  </div>
+
+  <!-- Only include CSRF token if it's available (safe if you don't use Spring Security) -->
+  <div th:if="${_csrf != null}">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+  </div>
+
+  <div>
+    <button type="submit">Save</button>
+    <a th:href="@{/tasks}">Cancel</a>
+  </div>
+</form>
+</body>
+</html>

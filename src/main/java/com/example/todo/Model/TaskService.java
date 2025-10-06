@@ -2,9 +2,8 @@ package com.example.todo.Model;
 
 import org.springframework.stereotype.Service;
 
-import com.google.common.base.Optional;
-
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TaskService {

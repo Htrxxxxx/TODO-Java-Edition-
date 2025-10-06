@@ -17,7 +17,7 @@ A simple app with Thymeleaf views , it's a basic CRUD project using a simple Tas
 - Delete tasks .
 
 ### Project Structure :
-
+```html
 todo/
 ├─ .mvn/
 ├─ .vscode/

@@ -7,7 +7,17 @@ A simple app with Thymeleaf views , it's a basic CRUD project using a simple Tas
 - toggle task .
 - Delete tasks .
 
-## Project Structure :
+### Todo App : 
+A simple app with Thymeleaf views , it's a basic CRUD project using a simple Task JPA entity (ORM) and a service layer . 
+
+### Features : 
+- Create tasks (name, description, done) .
+- List tasks .
+- toggle task .
+- Delete tasks .
+
+### Project Structure :
+
 todo/
 ├─ .mvn/
 ├─ .vscode/
@@ -42,6 +52,11 @@ todo/
 ├─ mvnw
 ├─ mvnw.cmd
 └─ pom.xml
+
+
+### Project Dependancy : 
+- JDK 17+
+- Maven or Gradle .
 
 
 ### Project Dependancy : 

@@ -7,9 +7,13 @@ A simple app with Thymeleaf views , it's a basic CRUD project using a simple Tas
 - toggle task .
 - Delete tasks .
 
+### Project Dependancy : 
+- JDK 17+
+- Maven or Gradle .
+- IDE (VSC preferred)
+  
 ### Project Structure :
 ```html
-<pre>
 todo/
 ├─ .mvn/
 ├─ .vscode/
@@ -44,9 +48,4 @@ todo/
 ├─ mvnw
 ├─ mvnw.cmd
 └─ pom.xml
-</pre>
 
-### Project Dependancy : 
-- JDK 17+
-- Maven or Gradle .
-- IDE (VSC preferred)

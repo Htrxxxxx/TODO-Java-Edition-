@@ -58,9 +58,4 @@ todo/
 ### Project Dependancy : 
 - JDK 17+
 - Maven or Gradle .
-
-
-### Project Dependancy : 
-- JDK 17+
-- Maven or Gradle .
-
+- IDE (VSC preferred)
